@@ -19,6 +19,10 @@ cp sample.env .env.local
 
 Step 2. Change the value of variables as needed in `.env.local.`
 
+For the best experience, set your own RPC endpoint (`VITE_SOLANA_RPC_ENDPOINT`)
+
+[List](https://solana.com/rpc) of free services to get solana RPC endpoint
+
 Step 3. Install dependencies
 ```bash
 yarn install
@@ -30,6 +34,10 @@ yarn dev
 ```
 
 Step 5. Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+
+Step 6. Optional. Now you can build and deploy your own version of widget. For example - to Github Pages or Vercel
+
+You can found deploy instuction at [Vite docs](https://vitejs.dev/guide/static-deploy)
 
 ## Environment variables
 
