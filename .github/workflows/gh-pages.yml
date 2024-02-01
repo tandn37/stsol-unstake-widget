@@ -10,6 +10,12 @@ permissions:
   pages: write
   id-token: write
 
+#Allow repo secrets
+env:
+  VITE_ACTIVE_SOLANA_CHAIN: ${{ secrets.VITE_ACTIVE_SOLANA_CHAIN }}
+  VITE_SOLANA_RPC_ENDPOINT: ${{ secrets.VITE_SOLANA_RPC_ENDPOINT }}
+  VITE_WALLET_CONNECT_PROJECT_ID: ${{ secrets.VITE_WALLET_CONNECT_PROJECT_ID }}
+
 # Allow one concurrent deployment
 concurrency:
   group: 'pages'
@@ -34,6 +40,8 @@ jobs:
         run: yarn install --ci
       - name: Build
         run: yarn build
+        env:
+          BASE: ${{ github.event.repository.name }}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
