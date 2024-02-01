@@ -29,7 +29,7 @@ import { deepLink } from '@/utils/deepLinks';
 import { getLedgerDerivation } from '@/utils/getLedgerDerivation';
 import { getConfig } from '@/contexts/config';
 
-const publicRuntimeConfig = getConfig();
+const { activeSolanaChain, walletConnectProjectId, base } = getConfig();
 
 export enum COMMON_WALLET_ID {
   WalletConnect = 'WalletConnect',
@@ -102,7 +102,7 @@ const commonWalletConfigs: WalletAdaptersAndProps<COMMON_WALLET_ID> = {
   },
   [COMMON_WALLET_ID.Solflare]: {
     adapter: new SolflareWalletAdapter({
-      network: publicRuntimeConfig.activeSolanaChain as any,
+      network: activeSolanaChain as any,
     }),
     // deepLink: deepLink`https://solflare.com/ul/v1/browse/${'pageUrl'}?ref=${'refUrl'}`,
     openInApp: true,
@@ -127,10 +127,10 @@ const commonWalletConfigs: WalletAdaptersAndProps<COMMON_WALLET_ID> = {
   },
   [COMMON_WALLET_ID.WalletConnect]: {
     adapter: new WalletConnectWalletAdapter({
-      network: publicRuntimeConfig.activeSolanaChain as any,
+      network: activeSolanaChain as any,
       options: {
         relayUrl: 'wss://relay.walletconnect.com',
-        projectId: publicRuntimeConfig.walletConnectProjectId,
+        projectId: walletConnectProjectId,
         metadata: {
           name: 'Stake Solana | Lido',
           description: 'Lido-DAO governed liquid staking protocol for the Solana blockchain',
@@ -147,7 +147,7 @@ const commonWalletConfigs: WalletAdaptersAndProps<COMMON_WALLET_ID> = {
   },
   [COMMON_WALLET_ID.MobileAdapter]: {
     adapter: new SolanaMobileWalletAdapter({
-      cluster: publicRuntimeConfig.activeSolanaChain,
+      cluster: activeSolanaChain,
       appIdentity: {
         name: 'Stake Solana | Lido',
         uri: 'https://solana.lido.fi',
@@ -177,21 +177,21 @@ const virtualWalletConfigs: VirtualWalletProps = {
   [VIRTUAL_WALLET_ID.MA_Espresso]: {
     ...via(COMMON_WALLET_ID.MobileAdapter),
     name: 'Espresso Cash',
-    icon: '/wallets/espresso-cash.png',
+    icon: `${base}/wallets/espresso-cash.png`,
     showOnMobile: true,
     hideOnDesktop: true,
   },
   [VIRTUAL_WALLET_ID.MA_Ultimate]: {
     ...via(COMMON_WALLET_ID.MobileAdapter),
     name: 'Ultimate',
-    icon: '/wallets/ultimate.png',
+    icon: `${base}/wallets/ultimate.png`,
     showOnMobile: true,
     hideOnDesktop: true,
   },
   [VIRTUAL_WALLET_ID.WC_Spot]: {
     ...via(COMMON_WALLET_ID.WalletConnect),
     name: 'Spot',
-    icon: '/wallets/spot.webp',
+    icon: `${base}/wallets/spot.webp`,
     showOnMobile: true,
   },
   [VIRTUAL_WALLET_ID.WC_Frontier]: {
@@ -210,32 +210,32 @@ const virtualWalletConfigs: VirtualWalletProps = {
   [VIRTUAL_WALLET_ID.WC_Fireblocks]: {
     ...via(COMMON_WALLET_ID.WalletConnect),
     name: 'Fireblocks',
-    icon: '/wallets/fireblocks.webp',
+    icon: `${base}/wallets/fireblocks.webp`,
   },
   [VIRTUAL_WALLET_ID.WC_Ottr]: {
     ...via(COMMON_WALLET_ID.WalletConnect),
     name: 'Ottr',
-    icon: '/wallets/ottr.webp',
+    icon: `${base}/wallets/ottr.webp`,
   },
   [VIRTUAL_WALLET_ID.WC_Glow]: {
     ...via(COMMON_WALLET_ID.WalletConnect),
     name: 'Glow',
-    icon: '/wallets/glow.png',
+    icon: `${base}/wallets/glow.png`,
   },
   [VIRTUAL_WALLET_ID.WC_Omni]: {
     ...via(COMMON_WALLET_ID.WalletConnect),
     name: 'Omni',
-    icon: '/wallets/omni.webp',
+    icon: `${base}/wallets/omni.webp`,
   },
   [VIRTUAL_WALLET_ID.WC_SafePal]: {
     ...via(COMMON_WALLET_ID.WalletConnect),
     name: 'SafePal',
-    icon: '/wallets/safepal.webp',
+    icon: `${base}/wallets/safepal.webp`,
   },
   [VIRTUAL_WALLET_ID.WC_Onto]: {
     ...via(COMMON_WALLET_ID.WalletConnect),
     name: 'Onto',
-    icon: '/wallets/onto.webp',
+    icon: `${base}/wallets/onto.webp`,
   },
 };
 

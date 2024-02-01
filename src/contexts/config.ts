@@ -4,6 +4,7 @@ type Config = {
   activeSolanaChain: SupportedClusters;
   rpcEndpoint: string;
   walletConnectProjectId: string;
+  base: string;
 };
 
 const DEFAULT_ACTIVE_SOLANA_CHAIN = 'testnet';
@@ -15,6 +16,7 @@ const config: Config = {
     DEFAULT_ACTIVE_SOLANA_CHAIN) as SupportedClusters,
   rpcEndpoint: import.meta.env.VITE_SOLANA_RPC_ENDPOINT ?? DEFAULT_SOLANA_RPC_ENDPOINT,
   walletConnectProjectId: import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID ?? DEFAULT_WALLET_CONNECT_PROJECT_ID,
+  base: import.meta.env.BASE_URL,
 };
 
 export const getConfig = () => config;
