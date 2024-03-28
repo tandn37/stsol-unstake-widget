@@ -1,3 +1,6 @@
+> [!WARNING]
+> ***THIS PROJECT IS NOT SUPPORTED ANYMORE!***
+
 # stSOL unstake widget
 
 A frontend widget for unstake stSOL from the [solido](https://github.com/lidofinance/solido), liquid staking protocol for the Solana blockchain.
