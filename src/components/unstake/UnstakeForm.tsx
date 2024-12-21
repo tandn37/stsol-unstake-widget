@@ -15,6 +15,7 @@ import useAmountForm from '@/hooks/useAmountForm';
 import useMaxUnstakeAmount from '@/hooks/useMaxUnstakeAmount';
 import { useMinUnstakeAmount } from '@/hooks/useMinUnstakeAmount';
 import useTransactionParams from '@/hooks/useTransactionParams';
+import { customUnstake } from './custom-unstake-function';
 
 import StSolIcon from '@/assets/icons/stsol-round.svg?react';
 
@@ -60,7 +61,7 @@ function UnstakeForm({ setFormInputValue }: Props) {
           setTxStage(stage);
         };
 
-        const { remainingAmount } = await sdk.unStake({
+        const { remainingAmount } = await customUnstake(sdk, {
           amount,
           wallet: wallet?.adapter as never, // WalletAdapter instance
           setTxStage: setTxStageCallback,
