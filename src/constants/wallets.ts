@@ -100,25 +100,25 @@ const commonWalletConfigs: WalletAdaptersAndProps<COMMON_WALLET_ID> = {
     }),
     icon: LedgerIcon,
   },
-  [COMMON_WALLET_ID.Solflare]: {
-    adapter: new SolflareWalletAdapter({
-      network: activeSolanaChain as any,
-    }),
-    // deepLink: deepLink`https://solflare.com/ul/v1/browse/${'pageUrl'}?ref=${'refUrl'}`,
-    openInApp: true,
-    showOnMobile: true,
-    hideOnAndroid: true,
-  },
+  // [COMMON_WALLET_ID.Solflare]: {
+  //   adapter: new SolflareWalletAdapter({
+  //     network: activeSolanaChain as any,
+  //   }),
+  //   // deepLink: deepLink`https://solflare.com/ul/v1/browse/${'pageUrl'}?ref=${'refUrl'}`,
+  //   openInApp: true,
+  //   showOnMobile: true,
+  //   hideOnAndroid: true,
+  // },
   [COMMON_WALLET_ID.Coinbase]: { adapter: new CoinbaseWalletAdapter() },
-  [COMMON_WALLET_ID.Exodus]: { adapter: new ExodusWalletAdapter() },
-  [COMMON_WALLET_ID.MathWallet]: {
-    adapter: new MathWalletAdapter(),
-    icon: MathWalletIcon,
-  },
-  [COMMON_WALLET_ID.Brave]: { adapter: new BraveWalletAdapter() },
-  [COMMON_WALLET_ID.Coin98]: { adapter: new Coin98WalletAdapter() },
-  [COMMON_WALLET_ID.Slope]: { adapter: new SlopeWalletAdapter() },
-  [COMMON_WALLET_ID.Solong]: { adapter: new SolongWalletAdapter() },
+  // [COMMON_WALLET_ID.Exodus]: { adapter: new ExodusWalletAdapter() },
+  // [COMMON_WALLET_ID.MathWallet]: {
+  //   adapter: new MathWalletAdapter(),
+  //   icon: MathWalletIcon,
+  // },
+  // [COMMON_WALLET_ID.Brave]: { adapter: new BraveWalletAdapter() },
+  // [COMMON_WALLET_ID.Coin98]: { adapter: new Coin98WalletAdapter() },
+  // [COMMON_WALLET_ID.Slope]: { adapter: new SlopeWalletAdapter() },
+  // [COMMON_WALLET_ID.Solong]: { adapter: new SolongWalletAdapter() },
   [COMMON_WALLET_ID.Trust]: {
     adapter: new TrustWalletAdapter(),
     icon: TrustIcon,
@@ -166,6 +166,7 @@ const commonWalletConfigs: WalletAdaptersAndProps<COMMON_WALLET_ID> = {
 
 const via = (id: COMMON_WALLET_ID) => ({ via: id, adapter: commonWalletConfigs[id].adapter });
 
+/*
 const virtualWalletConfigs: VirtualWalletProps = {
   [VIRTUAL_WALLET_ID.MA_Solflare]: {
     ...via(COMMON_WALLET_ID.MobileAdapter),
@@ -238,10 +239,11 @@ const virtualWalletConfigs: VirtualWalletProps = {
     icon: `${base}/wallets/onto.webp`,
   },
 };
+*/
 
 export const walletConfigs: WalletAdaptersAndProps<WALLET_ID> = {
   ...commonWalletConfigs,
-  ...virtualWalletConfigs,
+  // ...virtualWalletConfigs,
 };
 
 export const wallets = Object.values(commonWalletConfigs).map((w) => w.adapter);

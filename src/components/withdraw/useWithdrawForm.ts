@@ -5,6 +5,7 @@ import { TX_STAGE } from '@lidofinance/solido-sdk';
 import { SignerWalletAdapter } from '@solana/wallet-adapter-base';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { useCallback, useState } from 'react';
+import { customWithdraw } from './custom-withdraw-function';
 
 export const useWithdrawForm = () => {
   const { selection, accounts, updateAccounts } = useWithdrawData();
@@ -20,7 +21,7 @@ export const useWithdrawForm = () => {
   const [txError, setTxError] = useState(null);
   const closeTxModal = useCallback(() => setTxStage(TX_STAGE.IDLE), []);
 
-  const withdraw = useCallback(async () => {
+  const withdraw = useCallback(async (amountToWithdraw: number, shouldRestake: boolean) => {
     try {
       setExplorerLinkParams({ value: null, entity: null });
 
@@ -31,7 +32,9 @@ export const useWithdrawForm = () => {
         setTxStage(newTxStage);
       };
 
-      await sdk.withdraw({
+      await customWithdraw(sdk, {
+        amountToWithdraw,
+        shouldRestake,
         accounts: accounts.filter((a) => isSelected(a.pubkey)),
         wallet: wallet?.adapter as SignerWalletAdapter,
         setTxStage: setTxStageCallback,

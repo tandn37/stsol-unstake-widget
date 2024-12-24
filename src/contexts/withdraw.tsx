@@ -4,6 +4,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { PublicKey } from '@solana/web3.js';
 import { FC, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useSDK } from './sdk';
+import { getWithdrawableAccounts } from '../utils/getWithdrawableAccounts';
 
 export type WithdrawDavaValue = {
   loading: boolean;
@@ -35,9 +36,11 @@ export const WithdrawDataProvider: FC = ({ children }) => {
 
       if (verbose) setLoading(true);
       try {
-        const response = await sdk.getStakeAccounts(publicKey);
+        // @ts-ignore
+        const response = await getWithdrawableAccounts(sdk.connection, publicKey);
         setAccounts(response);
-      } catch {
+      } catch (err) {
+        console.log('err', err);
         setAccounts([]);
       }
       setLoading(false);

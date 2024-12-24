@@ -12,12 +12,12 @@ export default function IndexPage() {
   }, []);
 
   return (
-    <Layout title="Unstake stSOL" subtitle="Unstake stSOL and withdraw SOL">
+    <Layout title="Unstake stSOL" subtitle="Unstake stSOL and withdraw/restake SOL">
       <Switch
         checked={isSecondTabChecked}
         onClick={toggleSecondTab}
         checkedLabel="Unstake"
-        uncheckedLabel="Withdraw"
+        uncheckedLabel="Withdraw & Restake"
       />
 
       {!isSecondTabChecked ? <UnstakeCard /> : <WithdrawCard />}

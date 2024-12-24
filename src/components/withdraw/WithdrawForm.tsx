@@ -3,9 +3,9 @@ import { FormatToken } from '@/components/base/FormatToken';
 import ConnectWalletButton from '@/components/wallet/ConnectWalletButton';
 import { useAccount } from '@/contexts/account';
 import { useWithdrawData } from '@/contexts/withdraw';
-import { Stack, StackItem } from '@lidofinance/lido-ui';
+import { Checkbox, Stack, StackItem } from '@lidofinance/lido-ui';
 import { lamportsToSol } from '@lidofinance/solido-sdk';
-import { FC, useCallback } from 'react';
+import { ChangeEvent, FC, useCallback, useState } from 'react';
 import { WithdrawList } from './WithdrawList';
 import WithdrawTxModal from './WithdrawTxModal';
 import { useWithdrawForm } from './useWithdrawForm';
@@ -14,7 +14,12 @@ export const WithdrawForm: FC = () => {
   const { active } = useAccount();
   const { selection } = useWithdrawData();
   const { selectedCount, selectedAmount } = selection;
+  const [restakeIsChecked, setRestakeIsChecked] = useState(true);
 
+  const handleCheckboxChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    setRestakeIsChecked(event.target.checked);
+  }, []);
+  
   const isDisabled = selectedCount === 0;
 
   const amountToWithdraw =
@@ -30,7 +35,7 @@ export const WithdrawForm: FC = () => {
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
-      void withdraw();
+      void withdraw(selectedAmount, restakeIsChecked);
     },
     [withdraw],
   );
@@ -43,9 +48,15 @@ export const WithdrawForm: FC = () => {
             <WithdrawList />
           </StackItem>
           <StackItem>
+            <Checkbox
+              checked={restakeIsChecked}
+              onChange={handleCheckboxChange}
+              label="Withdraw SOL and Stake to Nansen"
+            > 
+            </Checkbox>
             {active ? (
               <BlueButton type="submit" disabled={isDisabled}>
-                Withdraw {amountToWithdraw}
+                Withdraw {restakeIsChecked ? 'and Restake' : ''} {amountToWithdraw}
               </BlueButton>
             ) : (
               <ConnectWalletButton />
