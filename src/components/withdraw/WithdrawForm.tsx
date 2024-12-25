@@ -48,12 +48,12 @@ export const WithdrawForm: FC = () => {
             <WithdrawList />
           </StackItem>
           <StackItem>
-            <Checkbox
+            {active && !isDisabled && <Checkbox
               checked={restakeIsChecked}
               onChange={handleCheckboxChange}
               label="Withdraw SOL and Stake to Nansen"
             > 
-            </Checkbox>
+            </Checkbox>}
             {active ? (
               <BlueButton type="submit" disabled={isDisabled}>
                 Withdraw {restakeIsChecked ? 'and Restake' : ''} {amountToWithdraw}
@@ -71,6 +71,7 @@ export const WithdrawForm: FC = () => {
         txAmount={lamportsToSol(selectedAmount)}
         explorerLinkParams={explorerLinkParams}
         txError={txError}
+        restakeIsChecked={restakeIsChecked}
       />
     </>
   );

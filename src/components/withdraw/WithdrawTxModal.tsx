@@ -55,6 +55,7 @@ export type WithdrawTxModalProps = {
     value: string;
     entity: ExplorerLinkEntity;
   };
+  restakeIsChecked?: boolean;
   txError: string;
   onClose: () => void;
 };
@@ -64,6 +65,7 @@ export default function WithdrawTxModal({
   txAmount,
   explorerLinkParams,
   txError,
+  restakeIsChecked,
   onClose,
 }: WithdrawTxModalProps) {
   const txLink = useSolanaExplorerLink(explorerLinkParams?.value, explorerLinkParams?.entity);
@@ -74,7 +76,7 @@ export default function WithdrawTxModal({
         return (
           <>
             <Spinner />
-            <BoldText>You are now withdrawing {txAmount} SOL</BoldText>
+            <BoldText>You are now withdrawing {restakeIsChecked ? 'and restaking' : ''} {txAmount} SOL</BoldText>
             <LightText>Processing your request</LightText>
             <InstructionText>Confirm this transaction in your wallet</InstructionText>
           </>
@@ -83,7 +85,7 @@ export default function WithdrawTxModal({
         return (
           <>
             <Spinner />
-            <BoldText>You are now withdrawing {txAmount} SOL</BoldText>
+            <BoldText>You are now withdrawing {restakeIsChecked ? 'and restaking' : ''} {txAmount} SOL</BoldText>
             <LightText>
               Transaction Approved. Waiting for transaction to be confirmed on the blockchain (MAX
               confirmation = ~32)
@@ -96,8 +98,8 @@ export default function WithdrawTxModal({
         return (
           <>
             <RoundCheckIcon />
-            <BoldText>{txAmount} SOL has been withdrawn</BoldText>
-            <LightText>Withdraw operation was successful</LightText>
+            <BoldText>{txAmount} SOL has been withdrawn {restakeIsChecked ? 'and restaked' : ''}</BoldText>
+            <LightText>Withdraw {restakeIsChecked ? 'and restake' : ''} operation was successful</LightText>
 
             {txLink && <SolanaExplorerLink href={txLink}>View on Block Explorer</SolanaExplorerLink>}
           </>

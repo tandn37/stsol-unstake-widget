@@ -24,8 +24,8 @@ export const getWalletProps = (walletId: WALLET_ID) =>
 export const getWalletAdapter = (walletId: WALLET_ID) => walletConfigs[walletId].adapter;
 
 export const isWalletAvailable = (walletId: WALLET_ID, onlyInstalled = false) =>
-  walletConfigs[walletId].adapter.readyState === WalletReadyState.Installed ||
-  (!onlyInstalled && walletConfigs[walletId].adapter.readyState === WalletReadyState.Loadable);
+  walletConfigs[walletId]?.adapter?.readyState === WalletReadyState.Installed ||
+  (!onlyInstalled && walletConfigs[walletId]?.adapter?.readyState === WalletReadyState.Loadable);
 
 // @note deepLink available only for mobile or tablet
 export const isWalletHasDeepLink = (walletId: WALLET_ID) =>
