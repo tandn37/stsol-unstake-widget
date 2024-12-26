@@ -72,7 +72,7 @@ export const UnstakeCard = () => {
           <InfoPanel>
             Your stake will take 2-3 days to completely deactivate upon Unstaking.
             <br />
-            After that, you can use your wallet (Phantom or Solflare) to withdraw the inactive stake.
+            After that, you can use your wallet (like Phantom) to withdraw the inactive stake.
           </InfoPanel>
         </CardDataWrapper>
       </Card>

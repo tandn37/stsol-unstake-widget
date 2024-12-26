@@ -1,12 +1,12 @@
 # Build stage
-FROM node:20-alpine AS build
+FROM node:18.19.0-alpine AS build
 
 RUN apk add --no-cache python3 make g++
 
 WORKDIR /app
 
 # Copy package files
-COPY package.json ./
+COPY package.json yarn.lock ./
 
 # Install dependencies
 RUN yarn install
