@@ -37,7 +37,7 @@ export const WithdrawForm: FC = () => {
       event.preventDefault();
       void withdraw(selectedAmount, restakeIsChecked);
     },
-    [withdraw],
+    [withdraw, restakeIsChecked],
   );
 
   return (
