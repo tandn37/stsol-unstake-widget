@@ -29,7 +29,7 @@ export const CounterStyled = styled.span`
 
 export const ListWrapper = styled.div`
   border-radius: ${({ theme }) => theme.borderRadiusesMap.md}px;
-  border: 1px solid var(--lido-color-foreground);
+  border: 1px solid #2b3540;
   border-bottom: none;
   overflow: hidden;
 `;
@@ -40,8 +40,9 @@ export const WithdrawRowStyled = styled.div<{
 }>`
   padding: ${({ theme }) => theme.spaceMap.md}px ${({ theme }) => theme.spaceMap.lg}px;
   padding-right: 12px;
-  border-bottom: 1px solid var(--lido-color-foreground);
-  background-color: #f2f5f8;
+  border-bottom: 1px solid #2b3540;
+  background-color: #2b3540;
+  color: #ffffff;
   display: flex;
   align-items: center;
   height: ${WITHDRAW_LIST_ITEM_SIZE}px;
@@ -49,7 +50,7 @@ export const WithdrawRowStyled = styled.div<{
   width: 100%;
   box-sizing: border-box;
   &:last-child {
-    border-bottom-color: var(--lido-color-backgroundSecondary);
+    border-bottom-color: #2b3540;
   }
 
   user-select: none;

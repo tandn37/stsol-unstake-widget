@@ -42,13 +42,14 @@ export const WithdrawForm: FC = () => {
 
   return (
     <>
-      <form autoComplete="off" onSubmit={handleSubmit}>
+      <form autoComplete="off" onSubmit={handleSubmit} className='withdraw-form'>
         <Stack direction="column" spacing="md" align="stretch">
           <StackItem>
             <WithdrawList />
           </StackItem>
           <StackItem>
             {active && !isDisabled && <Checkbox
+              color='custom'
               checked={restakeIsChecked}
               onChange={handleCheckboxChange}
               label="Withdraw SOL and Stake to Nansen"

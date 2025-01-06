@@ -27,7 +27,7 @@ const ModalPadding = styled.div`
 
 const ModalStyled = styled.div`
   text-align: center;
-  background-color: #ffffff;
+  background-color: #2b3540;
   padding: 32px;
   border-radius: 10px;
   width: 100%;

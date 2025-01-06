@@ -17,7 +17,7 @@ const RowWrapper = styled.div`
 const Label = styled.div`
   font-size: 12px;
   font-weight: 500;
-  color: #505a7a;
+  color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;

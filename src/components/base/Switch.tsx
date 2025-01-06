@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const SwitchWrapper = styled.div<{ disabled?: boolean }>`
   width: 380px;
   height: 44px;
-  background-color: #e2e6eb;
+  background-color: #2b3540;
   border-radius: 20px;
   position: relative;
   :hover {
@@ -20,7 +20,7 @@ const SwitchWrapper = styled.div<{ disabled?: boolean }>`
 const Handle = styled.div<{ checked?: boolean }>`
   width: 188px;
   height: 40px;
-  background-color: white;
+  background-color: #161f29;
   border-radius: 20px;
   position: absolute;
   left: ${(props) => (props.checked ? 'calc(100% - 190px)' : '2px')};
@@ -33,6 +33,7 @@ const Label = styled.p<{ checked?: boolean }>`
   font-size: 14px;
   z-index: 2;
   margin: 0;
+  color: #FFFFFF;
   opacity: ${(props) => (props.checked ? 0.5 : 1)};
   transition: opacity 0.3s ease;
   width: 200px;

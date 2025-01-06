@@ -14,9 +14,9 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
   body {
-    background-color: #F4F6F8;
+    background-color: #121212;
     margin: 0;
-    color: #0C141D;
+    color: #ffffff;
     position: relative;
     overflow: hidden;
   }
@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
   }
   strong {
     font-weight: 500
+  }
+  .withdraw-form label p {
+    color: #ffffff !important;
+    font-size: 13px;
   }
 `;
 

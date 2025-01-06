@@ -15,6 +15,7 @@ import CopyIcon from '@/assets/icons/copy.svg?react';
 import ExternalLinkIcon from '@/assets/icons/external-link.svg?react';
 
 const ModalTitle = styled.p`
+  color: #FFFFFF;
   font-weight: 800;
   font-size: 18px;
   line-height: 26px;
@@ -23,7 +24,8 @@ const ModalTitle = styled.p`
 `;
 
 const ModalContent = styled.div`
-  background-color: ${({ theme }) => theme.colors.background};
+  color: #FFFFFF;
+  background-color: #161f29;
   border-radius: 10px;
   padding: 20px;
   text-align: left;
@@ -39,7 +41,7 @@ const Left = styled.div``;
 const ConnectedWith = styled.p`
   font-size: 12px;
   line-height: 20px;
-  color: #505a7a;
+  color: #FFFFFF;
   margin-bottom: 8px;
 `;
 
@@ -56,18 +58,17 @@ const Address = styled.div`
 `;
 
 const DisconnectButton = styled(Button)`
-  background: #f4f6f8;
-  border: 1px solid #00a3ff;
+  background: #00ffa7;
+  border: 1px solid #00ffa7;
   width: 7rem;
   border-radius: 6px;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 12px;
   padding: 6px 12px;
   line-height: 20px;
-  color: #00a3ff;
+  color: #061019;
   &:hover {
-    background-color: #00a3ff;
-    color: white;
+    background: rgba(0, 255, 167, 0.85);
   }
 `;
 

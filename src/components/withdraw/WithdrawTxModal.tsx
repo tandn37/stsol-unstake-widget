@@ -28,14 +28,14 @@ const BoldText = styled.p`
 
 const LightText = styled.p`
   font-size: 14px;
-  color: #5d6b7b;
   margin-bottom: 42px;
   hyphens: auto;
+  color: #ffffff;
 `;
 
 const InstructionText = styled.p`
   font-size: 12px;
-  color: #5d6b7b;
+  color: #ffffff;
   opacity: 0.5;
   margin-bottom: 18px;
 `;

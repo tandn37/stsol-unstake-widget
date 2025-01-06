@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import Button from './base/Button';
 
 const BlueButton = styled(Button)`
+  margin-top: 10px;
   height: 44px;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: #00ffa7;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 24px;
-  color: #ffffff;
+  color: #061019;
   padding: 16px 20px;
   border-radius: 6px;
   width: 100%;
@@ -18,7 +19,7 @@ const BlueButton = styled(Button)`
   /* TODO: Swap colors */
 
   :hover {
-    background-color: #009bf2;
+    background: rgba(0, 255, 167, 0.85);
   }
 `;
 

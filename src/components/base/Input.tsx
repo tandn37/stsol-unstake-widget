@@ -24,7 +24,8 @@ const InputStyled = styled.input<{
   width: 100%;
   font-size: 14px;
   line-height: 24px;
-  background: #ffffff;
+  background: #161f29;
+  color: white;
   border: 1px solid
     ${(props) =>
       props.error
@@ -42,7 +43,7 @@ const InputStyled = styled.input<{
   &:focus {
     outline: none;
     cursor: text;
-    border: 1px solid #00a3ff;
+    border: 1px solid #00ffa7;
   }
 
   &::placeholder {

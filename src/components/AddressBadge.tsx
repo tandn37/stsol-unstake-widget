@@ -9,12 +9,12 @@ const AddressBadgeStyled = styled.div<{ mode: 'light' | 'dark' }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => (props.mode === 'light' ? props.theme.colors.background : '#00000020')};
+  background-color: ${(props) => (props.mode === 'light' ? '#161f29': '#00000020')};
   padding: 4px 4px 4px 14px;
   border-radius: 100px;
 
   .address {
-    color: ${(props) => (props.mode === 'light' ? '#5D6B7B' : '#ffffff')};
+    color: ${(props) => (props.mode === 'light' ? '#ffffff' : '#ffffff')};
     margin-right: 4px;
     font-size: 12px;
   }

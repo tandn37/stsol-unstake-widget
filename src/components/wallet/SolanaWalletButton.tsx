@@ -5,7 +5,7 @@ import { MODAL_ID, useModal } from '@/contexts/modals';
 import { lamportsToSol } from '@lidofinance/solido-sdk';
 
 const WalletButtonStyled = styled.div`
-  background-color: #ffffff;
+  background-color: #2b3540;
   padding: 8px;
   border-radius: 6px;
   display: flex;
@@ -17,7 +17,7 @@ const WalletButtonStyled = styled.div`
 `;
 
 const BalanceStyled = styled.div`
-  color: #0b1637;
+  color: #FFFFFF;
   margin-right: 12px;
   font-size: 14px;
   font-weight: 800;

@@ -19,14 +19,14 @@ const LayoutTitleStyle = styled.h1`
   font-size: 26px;
   line-height: 38px;
   font-weight: 800;
-  color: #273852;
+  color: #00FFA7;
   margin-bottom: 4px;
 `;
 
 const LayoutSubTitleStyle = styled.h4`
   font-size: 13px;
   font-weight: 500;
-  color: #7a8aa0;
+  color: #FFFFFF;
   margin-bottom: 16px;
 `;
 

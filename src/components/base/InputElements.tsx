@@ -8,7 +8,7 @@ export const LabelWrapper = styled.div`
 `;
 
 export const Label = styled.p`
-  color: #505a7a;
+  color: #FFFFFF;
   margin-top: 0px;
   line-height: 20px;
 `;

@@ -6,7 +6,7 @@ import styled, { keyframes } from 'styled-components';
 import { AccountRecord } from './types';
 
 const ButtonStyled = styled.div`
-  background-color: #eff2f6;
+  background-color: #00ffa7 !important;
   border-radius: 10px;
   display: flex;
   padding: 16px 20px;
@@ -21,7 +21,7 @@ const ButtonStyled = styled.div`
 
   :hover {
     cursor: pointer;
-    background-color: #00a3ff1a;
+    background: rgba(0, 255, 167, 0.85);
   }
 `;
 
