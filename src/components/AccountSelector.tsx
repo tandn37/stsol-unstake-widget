@@ -82,7 +82,7 @@ const ModalTitle = styled.p`
   font-weight: 800;
   font-size: 18px;
   line-height: 26px;
-  color: #080e14;
+  color: #ffffff;
   text-align: left;
 `;
 
@@ -95,13 +95,13 @@ const Account = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding: 18px;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: #061019;
   border-radius: 6px;
   cursor: pointer;
-  color: #0b1637;
+  color: #ffffff;
 
   &:hover {
-    background-color: #e5f5ff;
+    background-color: #061019;
   }
 
   &:not(:last-child) {
@@ -111,7 +111,7 @@ const Account = styled.div`
   .address {
     margin-left: 14px;
     font-size: 0.8rem;
-    color: #5d6b7b;
+    color: #ffffff;
   }
 
   .balance {
