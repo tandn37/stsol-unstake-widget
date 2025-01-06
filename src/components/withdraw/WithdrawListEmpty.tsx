@@ -8,7 +8,7 @@ export const WithdrawListEmpty: FC = () => {
   if (!active) {
     return (
       <WrapperEmpty>
-        <EmptyText color="secondary" size="sm">
+        <EmptyText size="sm">
           Connect wallet to see your stake accounts
         </EmptyText>
       </WrapperEmpty>

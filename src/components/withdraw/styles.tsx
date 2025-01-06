@@ -126,4 +126,5 @@ export const EmptyText = styled(Text)`
   margin: 0 auto;
   justify-self: center;
   align-self: center;
+  color: #ffffff;
 `;
