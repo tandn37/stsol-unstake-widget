@@ -12,7 +12,7 @@ export default function IndexPage() {
   }, []);
 
   return (
-    <Layout title="Unstake stSOL" subtitle="Unstake stSOL and withdraw/restake SOL">
+    <Layout title="Unstake stSOL" subtitle="Unstake stSOL and withdraw/restake SOL with Nansen">
       <Switch
         checked={isSecondTabChecked}
         onClick={toggleSecondTab}

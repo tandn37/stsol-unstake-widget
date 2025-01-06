@@ -4,6 +4,7 @@ import { glimmer } from '@/components/base/InlineLoader';
 import Wallet from '@/components/wallet/SolanaWallet';
 import { NETWORK_BY_CLUSTER } from '@/constants/solanaChains';
 import useChain from '@/hooks/useChain';
+import logo from '@/assets/nansen.svg';
 
 const HeaderStyled = styled.header`
   display: flex;
@@ -18,6 +19,11 @@ const HeaderStyled = styled.header`
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 16px 20px;
   }
+`;
+
+const Logo = styled.img`
+  height: 32px;
+  width: auto;
 `;
 
 const Left = styled.div`
@@ -58,7 +64,9 @@ const Header = () => {
 
   return (
     <HeaderStyled>
-      <Left></Left>
+      <Left>
+        <Logo src={logo} alt="Nansen" />
+      </Left>
       <Right>
         <NetworkName>
           <Dot />
